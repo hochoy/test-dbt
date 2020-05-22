@@ -32,8 +32,10 @@ echo "{% macro macro1(input) %}
 {% endmacro %}" > macros/macro1.sql
 
 // create test_run.js
-touch test_run.js
+npm init
 npm i axios uuid
+touch test_run.js
+
 
 // run test_run.js
 dbt rpc
