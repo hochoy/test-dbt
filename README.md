@@ -13,3 +13,29 @@ Try running the following commands:
 - Join the [dbt community](http://community.getbdt.com/) to learn from other analytics engineers
 - Find [dbt events](https://events.getdbt.com) near you
 - Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+
+### Instructions for test_run.js:
+These are the steps taken to create this repo:
+
+dbt version: 0.15.2
+
+```
+brew update
+brew tap fishtown-analytics/dbt
+brew install dbt
+dbt init ./test-dbt
+
+cd ./test-dbt
+
+echo "{% macro macro1(input) %}
+  SELECT {{ input }}
+{% endmacro %}" > macros/macro1.sql
+
+// create test_run.js
+touch test_run.js
+npm i axios uuid
+
+// run test_run.js
+dbt rpc
+node test_run.js
+```
