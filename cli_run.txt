@@ -1,0 +1,17 @@
+## get the server status
+curl --header "Content-Type: application/json" \
+--request POST \
+--data '{"jsonrpc":"2.0","method":"ps", "id":"1", "params": {"completed":true}}' \
+http://localhost:8580/jsonrpc
+
+## get running processes
+curl --header "Content-Type: application/json" \
+--request POST \
+--data '{"jsonrpc":"2.0","method":"ps", "id":"1"}' \
+http://localhost:8580/jsonrpc
+
+## compile a specfic macro
+curl --header "Content-Type: application/json" \
+--request POST \
+--data '{"jsonrpc":"2.0","method":"compile_sql", "id":"1", "params": { "timeout":60, "sql":"<BASE64>", "name": "macro1"}}' \
+http://localhost:8580/jsonrpc
