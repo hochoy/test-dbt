@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "uuid": "^8.1.0"
   },
   "devDependencies": {},
